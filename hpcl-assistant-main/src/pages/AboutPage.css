@@ -1,0 +1,567 @@
+/* About Page Base Styles */
+.about-page {
+  padding-top: 70px; /* Account for fixed navbar */
+  background-color: #f4f7f6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.about-hero {
+  position: relative;
+  height: 60vh;
+  background: linear-gradient(rgba(0, 45, 114, 0.8), rgba(0, 45, 114, 0.9)), 
+              url('../assets/images/sliderimage1.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color:#f8f9fa
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  opacity: 0.9;
+}
+
+/* Mission Section */
+.mission-section {
+  padding: 5rem 0;
+  background: #f8f9fa;
+}
+
+.mission-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 0 2rem;
+}
+
+.mission-content {
+  flex: 1;
+}
+
+.mission-content h2 {
+  color: white;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.mission-statement {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+  border-left: 4px solid #e31937;
+}
+
+.mission-statement p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.mission-image {
+  flex: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.mission-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.mission-image:hover img {
+  transform: scale(1.03);
+}
+
+/* History Section */
+.history-section {
+  padding: 5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.history-section h2 {
+  text-align: center;
+  color: #002d72;
+  font-size: 2.2rem;
+  margin-bottom: 3rem;
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background-color: #e31937;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+}
+
+.timeline-item {
+  padding: 10px 40px;
+  position: relative;
+  width: 50%;
+  box-sizing: border-box;
+  margin-bottom: 2rem;
+}
+
+.timeline-item:nth-child(odd) {
+  left: 0;
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+}
+
+.timeline-year {
+  position: absolute;
+  top: 20px;
+  padding: 0 15px; /* Use padding instead of fixed width */
+  height: 30px;
+  line-height: 30px;
+  background-color: var(--hpcl-blue);
+  color: white;
+  border-radius: 20px;
+  font-weight: bold;
+  text-align: center;
+  z-index: 1;
+}
+
+/* Pointer for the year marker */
+.timeline-year::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  background-color: var(--hpcl-blue);
+  transform: translateY(-50%) rotate(45deg);
+  z-index: -1;
+}
+
+.timeline-item:nth-child(odd) .timeline-year {
+  right: 0;
+  transform: translateX(50%);
+}
+
+.timeline-item:nth-child(even) .timeline-year {
+  left: 0;
+  transform: translateX(-50%);
+}
+
+.timeline-item:nth-child(odd) .timeline-year::before {
+  left: -5px; /* Attach pointer to the left side */
+}
+
+.timeline-item:nth-child(even) .timeline-year::before {
+  right: -5px; /* Attach pointer to the right side */
+}
+
+.timeline-content {
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content h3 {
+  color: #e31937;
+  margin-bottom: 0.5rem;
+}
+
+/* Team Section */
+.team-section {
+  padding: 5rem 2rem;
+  background: #f8f9fa;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.section-header h2 {
+  color: #002d72;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+}
+
+.team-image-container {
+  height: 250px;
+  overflow: hidden;
+}
+
+.team-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.team-card:hover .team-image-container img {
+  transform: scale(1.1);
+}
+
+.team-card h3 {
+  color: #002d72;
+  padding: 1rem 1.5rem 0;
+  font-size: 1.3rem;
+}
+
+.team-card p {
+  padding: 0 1.5rem 1.5rem;
+  color: #666;
+}
+
+/* Values Section */
+.values-section {
+  padding: 4rem 2rem;
+  background-color: #f4f7f6;
+  text-align: center;
+}
+
+.values-header h2 {
+  font-size: 2.8rem;
+  color: var(--hpcl-blue);
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 2.5rem;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.value-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-top: 3px solid var(--hpcl-red);
+}
+
+.value-card h3 {
+  font-size: 1.3rem;
+  color: var(--hpcl-blue);
+  margin-bottom: 1rem;
+}
+
+.value-card p {
+  line-height: 1.7;
+  color: #444;
+}
+
+/* About Page CTA Section */
+.cta-section-about {
+  padding: 4rem 2rem;
+  background-color: var(--hpcl-blue);
+  color: white;
+  text-align: center;
+}
+
+.cta-content-about h2 {
+  font-size: 2.2rem;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.cta-buttons-about {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.primary-button-about, .secondary-button-about {
+  padding: 0.8rem 1.8rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.primary-button-about {
+  background-color: var(--hpcl-red);
+  color: white;
+}
+
+.primary-button-about:hover {
+  background-color: #c0142f;
+  transform: translateY(-2px);
+}
+
+.secondary-button-about {
+  background-color: transparent;
+  color: white;
+  border-color: white;
+}
+
+.secondary-button-about:hover {
+  background-color: white;
+  color: var(--hpcl-blue);
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mission-container {
+    flex-direction: column;
+  }
+  
+  .timeline::before {
+    left: 31px;
+  }
+  
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+  
+  .timeline-item:nth-child(even) {
+    left: 0;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+}
+
+.about-header {
+  position: relative;
+  padding: 4rem 2rem;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-image: url('../assets/images/refinery.jpeg');
+  color: white;
+}
+
+.header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 45, 114, 0.7); /* HPCL Blue with transparency */
+}
+
+.about-header h1 {
+  position: relative;
+  font-size: 2.8rem;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.about-header p {
+  position: relative;
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #ffcc00; /* HPCL Yellow */
+}
+
+.about-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.content-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 4px solid var(--hpcl-red);
+}
+
+.content-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.content-card h2 {
+  font-size: 1.5rem;
+  color: var(--hpcl-blue);
+  margin-bottom: 1rem;
+}
+
+.content-card p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #444;
+}
+
+.about-footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--hpcl-blue);
+  color: white;
+  font-weight: 500;
+}
+
+.about-page-timeline {
+  padding-top: 70px;
+  background-color: #f4f7f6;
+  min-height: calc(100vh - 70px);
+}
+
+.heritage-header {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.heritage-header h1 {
+  font-size: 2.8rem;
+  color: var(--hpcl-blue);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.timeline-section {
+  padding: 0 2rem 4rem 2rem;
+}
+
+.timeline-container {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* The vertical line */
+.timeline-container::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  background-color: var(--hpcl-red);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1.5px;
+}
+
+.timeline-item {
+  padding: 10px 40px;
+  position: relative;
+  width: 50%;
+}
+
+/* The content card */
+.timeline-content {
+  padding: 1.5rem;
+  background-color: white;
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Place items on left and right */
+.timeline-item:nth-child(odd) {
+  left: 0;
+  padding-left: 0;
+  padding-right: 60px; /* Space for the year */
+  text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+  padding-right: 0;
+  padding-left: 60px; /* Space for the year */
+}
+
+.timeline-content h3 {
+  font-size: 1.25rem;
+  color: var(--hpcl-red);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.timeline-content p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* Arrow pointers on content cards */
+.timeline-content::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  border: medium solid white;
+}
+
+.timeline-item:nth-child(odd) .timeline-content::before {
+  right: -10px;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+.timeline-item:nth-child(even) .timeline-content::before {
+  left: -10px;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
