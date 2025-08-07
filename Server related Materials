@@ -1,1 +1,10 @@
+SERVER : Servers are powerful computers or software systems that provide services, data, or resources to other computers (called clients) over a network. They handle tasks like hosting websites, storing files, running applications, or managing databases. Servers are essential for communication and data exchange in both local and internet-based systems. A server is a real, tangible hardware machine designed to run server software and provide services to clients. It includes components like a processor, RAM, storage, and network interfaces—just like a regular computer—but is usually more powerful and built for continuous, heavy-duty operation. 
+Key Features of a Physical Server: 
+•	Dedicated Hardware: Not shared with other systems. 
+•	High Performance: Supports large workloads and multiple users. 
+•	Used For: 
+o	Hosting websites 
+o	Managing databases 
+o	Running enterprise applications 
+o	Virtualization (hosting multiple virtual machines) 
 
