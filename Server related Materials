@@ -8,3 +8,31 @@ o	Managing databases
 o	Running enterprise applications 
 o	Virtualization (hosting multiple virtual machines) 
 
+Pros and Cons of Servers:  
+Servers are the backbone of most modern digital infrastructure. Whether you're running a website, database, cloud app, or enterprise system servers power it all.  
+Advantages of Servers: 
+Centralized Management: 	All data and applications are stored and managed in one place, making updates, security, and control easier. 
+High Availability: 	Enterprise servers are designed for 24/7 uptime, with features like RAID, redundant power, and failover. 
+Scalability: 	Resources (CPU, RAM, storage) can be expanded to meet growing demands. 
+Security: 	Centralized security policies, firewalls, and controlled access help protect sensitive data. 
+Resource Sharing: 	Multiple clients or users can access shared resources like files, printers, and internet. 
+Backup & Recovery: 	Servers often support automated backup and disaster recovery plans. 
+Disadvantages of Servers: 
+•	 
+   High Cost:                     Enterprise servers and their maintenance can be expensive.    
+   Complex Setup        Requires technical expertise for configuration, updates, and         
+   and Maintenance:  troubleshooting. 
+Hardware Dependency: 	Physical servers can fail, requiring replacement or repair downtime. 
+ 
+Security Risks: 	Servers are common targets for cyberattacks; need continuous monitoring and patching. 
+ 
+Limited Mobility: 	Physical servers are stationary and not ideal for highly mobile or cloud-first environments. 
+ 
+Server vs Others 
+A server is a powerful, always-on machine designed to provide services and resources to multiple clients over a network, making it fundamentally different from other computing devices like desktops, laptops, cloud systems, and virtual machines. Unlike desktops, which are built for individual tasks like browsing or document editing, servers use high-end components like ECC RAM, RAID storage, and redundant power supplies for continuous operation and reliability. Compared to laptops, servers are stationary and optimized for performance and stability, while laptops are portable and battery-powered, better suited for personal or mobile use. In contrast to cloud computing, where virtual servers are hosted by third-party providers and accessed over the internet, physical servers offer more control, security, and are ideal for organizations with privacy or compliance needs, though cloud platforms excel in flexibility, scalability, and cost-efficiency. Finally, virtual machines (VMs) differ from physical servers in that they are software-based systems running on hypervisors, allowing multiple isolated OS environments to run on a single server, making them useful for testing, development, or resource-efficient deployments. Overall, servers stand out for their robustness and centralized service capabilities, while each alternative serves specific personal, virtualized, or cloud-based needs. 
+ 
+Types of Servers 
+Servers come in different types based on the services they offer. Below are some common server types: 
+🔸 Web Server 
+•	Hosts websites and delivers web pages via browsers. 
+•	Examples: Apache, Nginx. 
