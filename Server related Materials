@@ -36,3 +36,134 @@ Servers come in different types based on the services they offer. Below are some
 🔸 Web Server 
 •	Hosts websites and delivers web pages via browsers. 
 •	Examples: Apache, Nginx. 
+
+File Server 
+•	Stores, manages, and provides access to files over a network. 
+•	Examples: Windows File Server, Samba. 
+🔸 Database Server 
+•	Handles data storage, management, and querying. 
+•	Examples: MySQL, Oracle. 
+🔸 Mail Server 
+•	Manages the sending, receiving, and storage of emails. 
+•	Examples: Microsoft Exchange, Postfix. 
+🔸 DNS Server 
+•	Converts domain names into IP addresses. 
+•	Examples: BIND, Microsoft DNS Server. 
+🔸 Application Server 
+•	Runs applications and handles the backend logic for client programs. 
+•	Examples: WebLogic, JBoss. 
+🔸 Proxy Server 
+•	Acts as an intermediary between clients and other servers to enhance security and speed. 
+🔸 FTP Server 
+•	Transfers files between systems using File Transfer Protocol. 
+•	Example: FileZilla Server. 
+ 
+Server Configuration and Types: 
+Server configurations refer to the way hardware, software, and network components are arranged and managed in a server environment. These configurations define how a server performs, how it is used, and how it integrates with other systems. Below are the major types of server configurations: 
+1. Standalone Server Configuration 
+•	A single physical server running independently. 
+•	Handles a specific role like file storage, web hosting, or database management. 
+•	Best for: Small businesses or test environments. 
+2. Clustered Server Configuration 
+•	Multiple servers (nodes) connected to function as one system. 
+•	If one server fails, another takes over seamlessly. 
+•	Best for: Enterprise-level applications, mission-critical systems. 
+3. Virtualized Server Configuration 
+•	Uses a hypervisor to divide a physical server into multiple virtual machines (VMs). 
+•	Each VM can run its own OS and applications. 
+•	Best for: Data centers, cloud services, testing environments. 
+4. Rack Server Configuration 
+•	Servers mounted in a standard rack cabinet (U-based units). 
+•	Best for: Scalable server environments. 
+5. Cloud Server Configuration 
+•	Hosted on cloud platforms (e.g., AWS, Azure, GCP). 
+•	Best for: On-demand applications, startups, remote services. 
+6. RAID Configurations in Storage 
+•	Combines multiple disks for redundancy and/or performance. 
+•	Types include: 
+o	RAID 0 – Striping for performance 
+o	RAID 1 – Mirroring for redundancy 
+o	RAID 5/6 – Striping with parity for fault tolerance 
+o	RAID 10 – Combination of RAID 1 and 0 
+•	Best for: Data protection and performance optimization. 
+7. Hyper-Converged Configuration (HCI) 
+•	Combines compute, storage, and networking in a single unified system. 
+•	Uses virtualization and software-defined storage. 
+•	Easy to manage, scalable, and efficient. 
+•	Best for: Private clouds and modern data centers. 
+ 
+Server Modes – 
+•	Standalone Mode 
+In Standalone Mode, the server functions independently without being connected to any network domain. It doesn't rely on centralized services for authentication or management. This mode is simple to set up and is suitable for small networks, local applications, or testing environments where only basic services are needed. However, it lacks centralized control and scalability. 
+•	Domain Mode 
+Domain Mode allows the server to be part of a domain, typically managed by services like Active Directory (AD). In this configuration, the server can authenticate users, apply group policies, and manage resources across multiple systems in a centralized manner. This is commonly used in enterprises where user management, security, and access control need to be standardized and enforced across the organization. 
+•	Workgroup Mode 
+Workgroup Mode is a peer-to-peer network configuration where each server or system maintains its own user accounts and permissions. There is no central control, making it easier to set up but less secure and manageable as the network grows. This mode is often found in small offices or home setups with limited users and devices. 
+•	Virtual Server Mode 
+In this mode, the server operates as a Virtual Machine (VM) inside a hypervisor like VMware ESXi, Hyper-V, or Oracle VM. Virtual servers are flexible, cost-effective, and easy to manage. They allow for resource optimization, easy backups, and quick deployment. Multiple VMs can run on a single physical server, each isolated and running its own operating system. 
+•	Cluster Mode 
+Cluster Mode involves two or more servers working together as a unified system to ensure high availability. If one server fails, another in the cluster immediately takes over, preventing downtime. This is essential for mission-critical services like banking systems, healthcare servers, and enterprise databases that require continuous uptime. 
+•	Maintenance Mode 
+Maintenance Mode is used when a server needs to be taken temporarily offline for tasks like patching, backups, or troubleshooting. While in this mode, the server is isolated from active workloads to avoid disruptions. It’s commonly used in virtualization platforms and clustered systems to safely perform updates or hardware replacements. 
+ 
+ 
+ 
+ 
+Redundancy in Servers 
+Redundancy enhances reliability by duplicating critical components to prevent downtime. 
+•	Power Supply Redundancy: Dual PSUs and UPS systems. 
+•	Network Redundancy: Multiple NICs or distinct uplinks. 
+•	Hardware Redundancy: Backup CPUs, memory, and power circuits. 
+•	Server Clustering: Groups of servers act as one; if one fails, others continue the service. 
+ 
+RAID Configurations in Servers 
+RAID (Redundant Array of Independent Disks) combines multiple drives for performance enhancement and/or fault tolerance. 
+🔹 RAID 0 (Striping) 
+RAID 0, also known as striping, is a RAID configuration that splits (or stripes) data evenly across two or more disks. It focuses on performance—not redundancy. 
+•	Data is broken into blocks and written across all disks in the array. 
+•	Example: With 2 disks, block 1 goes to Disk A, block 2 to Disk B, block 3 to Disk A again, and so on. 
+•	All disks work simultaneously, which speeds up read/write operations. 
+🔹 RAID 1 (Mirroring)  
+RAID 1, also called mirroring, is a RAID configuration where the same data is copied identically to two or more disks. It is designed for data redundancy and reliability, not speed. 
+•	Every piece of data written to one disk is simultaneously written to another. 
+•	If one disk fails, the other continues running without data loss. 
+🔹 RAID 5 (Block-Level Striping with Distributed Parity 
+RAID 5 is a popular RAID configuration that uses block-level striping like RAID 4 but distributes parity information across all disks instead of dedicating one disk for parity. This provides a good balance between performance, fault tolerance, and storage efficiency. 
+•	Data is split into blocks and striped across multiple disks. 
+•	Parity blocks are also striped and rotated across the disks (used to recover lost data if one disk fails). 
+•	If a disk fails, the system can rebuild data using the parity and the remaining disks. 
+🔹 RAID 6 (Block-Level Striping with Double Distributed Parity)  
+RAID 6 is an advanced RAID configuration similar to RAID 5, but it stores two sets of parity data across all disks. This allows it to survive two simultaneous disk failures, providing higher fault tolerance. 
+•	Data is striped at the block level across all disks. 
+•	Two different parity blocks (P and Q) are distributed across all drives using complex algorithms. 
+•	If up to 2 drives fail, data can still be reconstructed using the dual parity. 
+ 
+ Key Components of Server Hardware: 
+1.	Processor (CPU) 
+  • The brain of the server. 
+  • Server-grade CPUs like Intel Xeon or AMD EPYC are built for       multitasking, virtualization, and efficiency under load. 
+2.	Memory (RAM) 
+• Temporarily stores active data and processes. 
+•	Servers often have large RAM capacities (64GB–1TB+). 
+3.	Storage (HDDs or SSDs) 
+HDDs – More storage, cheaper, slower. 
+SSDs – Faster, more reliable, costlier. 
+4.	Motherboard : The central board that connects all hardware components. 
+•	Server motherboards support: 
+•	Multiple CPUs 
+•	High RAM capacities 
+•	Redundant power and network systems 
+•	Advanced I/O ports and expansion slots 
+5.	Power Supply Units (PSU): Supplies electricity to all components. 
+6.	Network Interface Cards (NICs): Allow servers to connect to networks. 
+7.	RAID Controller 
+8.	Cooling Systems 
+9.	Chassis (Server Case) 
+10.	Expansion Cards & Buses 
+ 
+🔹 Virtualization in Servers 
+Virtualization is the process of creating a virtual representation of hardware such as server, storage, network or other physical machines. It supports multiple copies of virtual machines (VMs) to execute on one physical machine each with their own operating system and programs. 
+Virtualizations uses special software known as hypervisor, to create many virtual computers (cloud instances) on one physical computer. The Virtual Machines behave like actual computers but use the same physical machine. 
+Virtual Machines (Cloud Instances) 
+After installing virtualization software on your computer, you can set up one or more virtual machines. The Virtual machines are similar to other applications on your computer. The Actual computer is "Host" and the Virtual Computers are "Guests". You can have several guests on a single host, and each guests can have its own operating system, which may be the same or different from the host. 
+
