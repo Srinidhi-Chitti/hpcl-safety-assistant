@@ -1,0 +1,133 @@
+Computer Networks Concepts
+1. Client-Server Architecture
+Concept:
+In CN, a client-server model is where clients (user machines) request resources or services, and servers (central machines) process and respond to these requests.
+
+Where in HPCL Project:
+
+The HPCL central server stores all transactional and operational data (fuel inventory, billing, payment logs).
+
+Client terminals at petrol pumps (POS machines, fuel dispensers with embedded controllers) act as clients requesting data (fuel prices, stock levels) and sending updates (sales transactions) to the server.
+
+Example: When a customer pays for fuel, the client sends the transaction to the server for validation and logging.
+
+2. Protocols (HTTP/HTTPS, TCP/IP)
+Concept:
+
+HTTP/HTTPS: Used for secure web-based communication between client and server.
+
+TCP/IP: The foundational suite for data transmission over networks.
+
+Where in HPCL Project:
+
+The web dashboard for HPCL managers uses HTTPS to securely fetch analytics and operational data.
+
+Fuel station POS terminals communicate over TCP/IP to ensure reliable delivery of billing and inventory updates.
+
+HTTPS ensures encryption, protecting sensitive financial and operational data from interception.
+
+3. DNS & IP Addressing
+Concept:
+
+IP Addressing: Every device on the network has a unique IP for communication.
+
+DNS: Translates human-readable domain names into IP addresses.
+
+Where in HPCL Project:
+
+POS devices and the central server have unique IPs for identification.
+
+When a web browser is used to access HPCL’s internal dashboard (e.g., dashboard.hpcl.com), DNS resolves the domain to the internal server IP.
+
+4. Network Topology
+Concept:
+
+The arrangement of nodes and connections in a network.
+
+Common types: Star, Bus, Ring, Hybrid.
+
+Where in HPCL Project:
+
+HPCL petrol pumps follow a Star Topology where all POS devices connect to a central switch/router, which then connects to the server.
+
+This ensures easy maintenance and scalability.
+
+5. Socket Programming & APIs
+Concept:
+
+Sockets enable two-way communication between processes over a network.
+
+APIs abstract and simplify communication between software components.
+
+Where in HPCL Project:
+
+Real-time fuel dispenser control uses socket connections to send/receive data between hardware controllers and the billing software.
+
+REST APIs allow external systems (payment gateways, analytics tools) to interact with the HPCL database.
+
+6. Data Transmission & Error Handling
+Concept:
+
+Reliable transmission is ensured via TCP, which guarantees packet delivery and order.
+
+Error detection methods like checksums and CRC prevent corrupted data from being processed.
+
+Where in HPCL Project:
+
+Billing data sent from POS to the server uses TCP to prevent loss or duplication.
+
+Any mismatch in checksum triggers an error log for troubleshooting.
+
+7. Network Security
+Concept:
+
+Encryption (SSL/TLS) ensures data confidentiality.
+
+Firewalls block unauthorized access.
+
+VPNs provide secure remote access.
+
+Where in HPCL Project:
+
+All data between POS terminals and the server is encrypted via HTTPS/TLS.
+
+HPCL internal networks are shielded by firewalls to prevent hacking attempts.
+
+Managers accessing systems remotely use VPN connections.
+
+8. Bandwidth & Latency Management
+Concept:
+
+Bandwidth: The maximum rate of data transfer.
+
+Latency: Delay between sending and receiving data.
+
+Where in HPCL Project:
+
+Network configuration ensures real-time updates from POS to the server with minimal latency.
+
+High-bandwidth connections are reserved for analytics dashboards and large data transfers.
+
+9. Caching & Content Delivery
+Concept:
+
+Caching stores frequently accessed data locally to reduce load and speed up response time.
+
+CDNs (Content Delivery Networks) serve static resources quickly.
+
+Where in HPCL Project:
+
+POS terminals cache static price lists so that transactions can continue even during short-term server downtime.
+
+Updated price lists are fetched periodically from the server.
+
+10. Network Redundancy & Failover
+Concept:
+
+Redundant systems ensure continuous service in case of hardware or connection failure.
+
+Where in HPCL Project:
+
+HPCL uses backup internet connections for critical POS terminals.
+
+Database replication ensures data isn’t lost if one server fails.
