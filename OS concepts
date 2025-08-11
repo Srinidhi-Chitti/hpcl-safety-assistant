@@ -1,0 +1,106 @@
+# HPCL Safety Assistant — OS Concepts & Implementation
+
+This document explains how core **Operating System (OS) concepts are applied in the HPCL Safety Assistant project, along with examples.
+
+## 1. Process Management
+The backend uses **Gunicorn** to spawn multiple worker processes that handle requests in parallel.
+
+# Start Flask app with 4 worker processes
+gunicorn app:app --workers 4 --bind 0.0.0.0:8000
+Benefit: Allows multiple incoming API requests to be processed concurrently.
+
+2. Multithreading
+For AI query processing and routing, Python threading is used to run background computations in parallel.
+
+python:
+import threading
+
+def process_query(query):
+    # NLP processing logic
+    pass
+
+t1 = threading.Thread(target=process_query, args=("Incident report 1",))
+t2 = threading.Thread(target=process_query, args=("Incident report 2",))
+
+t1.start()
+t2.start()
+Benefit: Improves speed when handling multiple AI tasks at the same time.
+
+3. CPU Scheduling
+The Linux scheduler automatically balances CPU time between Gunicorn workers and background jobs.
+
+# Check process scheduling
+top
+# Change priority (lower number = higher priority)
+sudo renice -n 5 -p <PID>
+Benefit: Prevents any single process from monopolizing the CPU.
+
+4. Memory Management
+Dynamic memory allocation is done when storing embeddings with FAISS or parsing large PDFs with PyPDF2.
+
+python:
+import faiss
+import numpy as np
+
+# Create FAISS index dynamically in memory
+index = faiss.IndexFlatL2(128)
+vectors = np.random.random((1000, 128)).astype('float32')
+index.add(vectors)
+Benefit: Handles large datasets efficiently without wasting RAM.
+
+5. Inter-Process Communication (IPC)
+Flask routes communicate with FAISS, NLP models, and the routing engine using in-memory calls and message passing.
+
+python:
+from multiprocessing import Process, Pipe
+
+def worker(conn):
+    conn.send("Processed data")
+    conn.close()
+
+parent_conn, child_conn = Pipe()
+p = Process(target=worker, args=(child_conn,))
+p.start()
+print(parent_conn.recv())
+p.join()
+Benefit: Smooth exchange of data between components.
+
+6. Synchronization
+To avoid race conditions, mutex locks are used when updating the FAISS index.
+
+python:
+import threading
+lock = threading.Lock()
+
+def update_index(data):
+    with lock:
+        # Critical section
+        pass
+Benefit: Prevents index corruption during concurrent writes.
+
+7. File System Management
+Incident reports, safety manuals, and cached AI embeddings are stored on disk.
+
+python:
+with open("incident_log.txt", "w") as f:
+    f.write("Incident ID: 101 - Description...")
+Benefit: Data persistence even after a server restart.
+
+8. Deadlock Avoidance
+Locks are always acquired in a consistent order to prevent deadlocks.
+
+python:
+lock_a = threading.Lock()
+lock_b = threading.Lock()
+
+def safe_task():
+    with lock_a:
+        with lock_b:
+            pass
+Benefit: Keeps the system responsive during high load.
+
+9. Virtualization
+Runs on Nutanix AHV virtualized Linux servers, allowing easy scaling and deployment.
+# Check virtualized environment
+lscpu | grep "Hypervisor vendor"
+Benefit: Flexible infrastructure management without hardware dependency.
